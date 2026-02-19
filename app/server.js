@@ -21,7 +21,7 @@ const UserSchema = new mongoose.Schema({
 const User = mongoose.model("User", UserSchema);
 
 app.get('/health', (req,res) => {
-  console.log("checking server status");
+  console.log("checking server status")
   res.status(200).json({status: "OK"});
 })
 
