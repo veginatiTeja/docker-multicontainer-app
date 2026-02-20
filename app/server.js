@@ -28,7 +28,7 @@ app.get('/health', (req,res) => {
 // Test Route
 app.get("/", (req, res) => {
   let response = "With github actions and docker hub storage and pulls into the deployment server "
-  res.send(`Multi Container App Working 🚀 ${response}`);
+  res.send(`Multi Container App Working ${response}`);
 });
 
 // ✅ Add User Route
