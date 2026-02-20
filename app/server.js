@@ -28,7 +28,7 @@ app.get('/health', (req,res) => {
 // Test Route
 app.get("/", (req, res) => {
   console.log("checking server status now");
-  let response = "With github actions and docker hub storage and pulls into the deployment server successfully auto deployment working";
+  let response = "With github actions and docker hub storage and pulls into the deployment server successfully auto deployment working *************"
   res.send(`Multi Container App Working ${response}`);
 });
 
