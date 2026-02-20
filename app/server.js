@@ -27,7 +27,8 @@ app.get('/health', (req,res) => {
 
 // Test Route
 app.get("/", (req, res) => {
-  res.send("Multi Container App Working 🚀");
+  let response = "With github actions and docker hub storage and pulls into the deployment server "
+  res.send(`Multi Container App Working 🚀 ${response}`);
 });
 
 // ✅ Add User Route
@@ -61,7 +62,12 @@ app.post("/add", async (req, res) => {
 app.get("/users", async (req, res) => {
   try {
     const users = await User.find();
-    res.json("users "+JSON.stringify(users));
+    if(users && users.length > 0) {
+         res.json("users "+JSON.stringify(users));
+    }
+    else {
+      res.status(200).json({message: "users not there in mongodb database"})
+    }
   } catch (error) {
     res.status(500).json({ message: "Error fetching users" });
   }
